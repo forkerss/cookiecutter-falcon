@@ -1,0 +1,24 @@
+[[source]]
+url = "{{cookiecutter.pypi_src}}"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+falcon = "*"
+cerberus = "*"
+gunicorn = "*"
+click = "*"
+bcrypt = "*"
+cryptography = "*"
+
+
+[dev-packages]
+pylint = "*"
+autopep8 = "*"
+pytest = "*"
+
+[requires]
+python_version = "{{cookiecutter.python_version}}"
+
+[pipenv]
+allow_prereleases = true

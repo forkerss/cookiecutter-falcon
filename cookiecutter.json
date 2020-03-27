@@ -1,0 +1,7 @@
+{
+  "project_name": "FalconDemo",
+  "python_version": 3.7,
+  "pypi_src": "https://pypi.tuna.tsinghua.edu.cn/simple",
+  "gunicorn_workers": 3,
+  "domain": "example.io"
+}

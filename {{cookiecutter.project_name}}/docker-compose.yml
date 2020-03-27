@@ -1,0 +1,24 @@
+version: "3"
+services:
+  webapi:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    command: "bash /app/bin/bin.sh"
+    volumes:
+      - "./:/app"
+    ports:
+      - 127.0.0.1:5000:5000
+
+  nginx:
+    image: nginx
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - webapi
+    volumes:
+      - "./deploy/nginx/conf.d:/etc/nginx/conf.d"
+      - "./deploy/nginx/www:/var/www"
