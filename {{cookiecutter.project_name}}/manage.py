@@ -19,7 +19,7 @@ def manage():
 @click.option("--host", "host", default="127.0.0.1")
 @click.option("--port", "port", default=5000)
 @click.option("--testing", "testing", default=True)
-def runweb(host, port, testing):
+def run(host, port, testing):
     """Runs the application on a local development server.
     """
     try:
