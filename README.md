@@ -1,5 +1,5 @@
 # cookiecutter-falcon 🦅
-Fast building `Falcon` rest api(with sqlite using ORM) project template.
+Fast building `Falcon` rest api project template.
 
 It includes the following: Docker, Docker-compose, Gunicorn, Pipenv, Nginx and a simple command manager.
 
