@@ -15,7 +15,6 @@ cryptography = "*"
 [dev-packages]
 pylint = "*"
 autopep8 = "*"
-pytest = "*"
 
 [requires]
 python_version = "{{cookiecutter.python_version}}"
