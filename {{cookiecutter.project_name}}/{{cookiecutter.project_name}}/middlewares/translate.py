@@ -2,7 +2,6 @@ import json
 
 from falcon import MEDIA_JSON
 
-from {{cookiecutter.project_name}} import config as cnf
 from {{cookiecutter.project_name}}.lib import errors
 from {{cookiecutter.project_name}}.lib.log import logger
 
@@ -13,8 +12,8 @@ class Translate:
     """
 
     def process_request(self, req, resp):
-        logger.debug("Translate - method: %s, content_type: %s" %
-                     (repr(req.method), repr(req.content_type)))
+        logger.debug("Translate - method: %s, content_type: %s",
+                     repr(req.method), repr(req.content_type))
 
         if req.content_type is None or \
                 not req.content_type.startswith(MEDIA_JSON):

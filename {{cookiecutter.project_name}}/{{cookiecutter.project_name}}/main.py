@@ -10,7 +10,6 @@ from {{cookiecutter.project_name}}.middlewares import CORS, Filter, Translate
 def register_routes(app):
     # index
     app.add_route('/', Index())
-    # users self
     # add app error
     app.add_error_handler(AppError, AppError.handle)
 

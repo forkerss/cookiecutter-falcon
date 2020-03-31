@@ -5,7 +5,7 @@ from {{cookiecutter.project_name}}.lib.errors import (AppError,
                                                       InvalidParameterError)
 from {{cookiecutter.project_name}}.lib.log import logger
 
-ALLSCHEMA = {
+FIELDSCHEMAS = {
     "User": {
         "username": {
             "type": "string",
@@ -41,12 +41,12 @@ class FieldValidator:
         self.null = null
 
     def validate(self, req, resp, resource, params):
-        v = Validator(self.schema)
+        _validator = Validator(self.schema)
         if self.is_params:
             doc = req.params
         else:
             doc = req.context.get("data", None)
-        logger.debug("FieldValidator - data: %s" % repr(doc))
+        logger.debug("FieldValidator - data: %s", repr(doc))
 
         if self.null is False:
             if not doc:
@@ -55,7 +55,7 @@ class FieldValidator:
                 raise InvalidParameterError(
                     "Invalid doc %s not a dict." % doc)
         try:
-            if not v.validate(doc):
-                raise InvalidParameterError(v.errors)
+            if not _validator.validate(doc):
+                raise InvalidParameterError(_validator.errors)
         except SchemaError:
             raise AppError(description="FieldValidator Schema Error")
