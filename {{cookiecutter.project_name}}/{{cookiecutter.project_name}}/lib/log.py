@@ -1,5 +1,6 @@
 import logging
 import sys
+from typing import TextIO
 
 FORMAT = '[%(asctime)s] [%(process)d] [%(levelname)s] %(message)s'
 TIMESTAMP_FORMAT = '%Y-%m-%d %H:%M:%S %z'
@@ -8,7 +9,7 @@ logger = logging.getLogger("{{cookiecutter.project_name}}")
 logger.propagate = False
 
 
-def setup_logger(level=None, stream=sys.stdout):
+def setup_logger(level: str = None, stream: TextIO = sys.stdout):
     # clear logging default handlers
     logging.getLogger().handlers.clear()
     logger.handlers.clear()

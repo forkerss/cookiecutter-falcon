@@ -1,8 +1,9 @@
-from falcon import MEDIA_JSON, testing
+from falcon import testing
+
 from {{cookiecutter.project_name}}.main import create_app
 
 
-class MyTestCase(testing.TestCase):
+class TestCaseBase(testing.TestCase):
     def setUp(self):
-        super(MyTestCase, self).setUp()
+        super(TestCaseBase, self).setUp()
         self.app = create_app(testing=True)

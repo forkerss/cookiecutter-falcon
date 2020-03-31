@@ -1,8 +1,9 @@
+from typing import Dict
+
 from cerberus import SchemaError, Validator
-
-from {{cookiecutter.project_name}}.lib.errors import AppError, InvalidParameterError
+from {{cookiecutter.project_name}}.lib.errors import (AppError,
+                                                      InvalidParameterError)
 from {{cookiecutter.project_name}}.lib.log import logger
-
 
 ALLSCHEMA = {
     "User": {
@@ -32,7 +33,9 @@ class FieldValidator:
         def on_get(self, req, resp): ...
     """
 
-    def __init__(self, schema, is_params=False, null=False):
+    def __init__(self, schema: Dict,
+                 is_params: bool = False,
+                 null: bool = False):
         self.schema = schema
         self.is_params = is_params
         self.null = null

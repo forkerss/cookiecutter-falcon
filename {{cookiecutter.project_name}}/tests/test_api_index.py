@@ -1,12 +1,9 @@
 import unittest
 
-from falcon import MEDIA_JSON, testing
-
-from {{cookiecutter.project_name}}.main import create_app
-from tests.base import MyTestCase
+from tests.base import TestCaseBase
 
 
-class TestApiIndex(MyTestCase):
+class TestApiIndex(TestCaseBase):
     def test_index(self):
         """index
         """
